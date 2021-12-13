@@ -24,7 +24,7 @@ or manually npm
 2. Enter `npm install`
 3. Enter `npm update @grapecity/wyn-report-viewer --latest`
 4. Enter `npm update @grapecity/wyn-report-designer --latest`
-5. Enter `npm run dev`
+5. Enter `ng serve --open`
 6. Open http://localhost:3000 by browser
 
 ### Wyn Enterprise System Configurations for API usage
