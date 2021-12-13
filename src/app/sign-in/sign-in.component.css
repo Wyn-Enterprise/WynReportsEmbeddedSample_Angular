@@ -1,0 +1,90 @@
+#sign-in-root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign-in-form {
+  width: 340px;
+}
+
+  .sign-in-form > *, #org-root > div, #org-root > label {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 25px;
+  }
+
+  .sign-in-form .sign-in-control {
+    height: 50px;
+  }
+
+.sign-in-control > * {
+  width: 100%;
+  height: 100%;
+}
+
+.sign-in-error {
+  margin-bottom: 25px;
+  color: var(--color-text-error);
+  font-size: var(--fs-controls);
+}
+
+  .sign-in-error > * {
+    margin-bottom: 5px;
+  }
+
+.sign-in-button {
+  height: 40px;
+  width: 100%;
+  cursor: pointer;
+  transition: all .3s;
+  color: var(--color-text-main);
+  border: none;
+  border-radius: 2px;
+  background-color: var(--color-accent);
+  font-size: var(--fs-controls);
+}
+
+  .sign-in-button:hover {
+    background-color: var(--color-accent-hover);
+  }
+
+  .sign-in-button:focus, .sign-in-button:disabled {
+    outline: 0;
+  }
+
+  .sign-in-button:disabled, .sign-in-button:active {
+    background-color: var(--color-accent-focus);
+  }
+
+.sign-in-input {
+  padding: 5px;
+  transition: all .3s;
+  color: var(--color-text-input);
+  border: none;
+  border-bottom: 1px solid var(--color-accent);
+  font-size: var(--fs-controls);
+}
+
+  .sign-in-input:focus {
+    border-bottom: 1px solid var(--color-accent-focus);
+    outline: none;
+    background-color: #fff;
+  }
+
+  .sign-in-input::placeholder {
+    color: var(--color-text-placeholder);
+  }
+
+.org-form-label {
+  display: block;
+  width: 100%;
+  height: 40px;
+  padding: 5px;
+  transition: all .3s;
+  color: var(--color-text-input);
+  border: none;
+  font-size: var(--fs-controls);
+}

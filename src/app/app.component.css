@@ -1,0 +1,134 @@
+.app-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--width-sidebar);
+  color: var(--color-sidebar-text);
+  border-right: 1px solid var(--color-sidebar-border);
+  background-color: var(--color-sidebar-body-bg);
+  font-size: var(--fs-sidebar);
+  height: 100vh;
+}
+
+.app-sidebar-header {
+  width: 100%;
+  background-color: var(--color-sidebar-header-bg);
+}
+
+.app-sidebar-header-group {
+  padding: 10px;
+  border-bottom: 1px solid var(--color-sidebar-border);
+}
+
+#app-portal-url > a {
+  color: var(--color-sidebar-text);
+}
+
+.app-user-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+  .app-user-info > * {
+    display: block;
+  }
+
+.app-sidebar-btn {
+  padding: 7px;
+  cursor: pointer;
+  color: var(--color-sidebar-text-btn);
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  background-color: var(--color-sidebar-btn);
+  font-size: var(--fs-sidebar);
+}
+
+  .app-sidebar-btn:hover {
+    background-color: var(--color-sidebar-btn-hover);
+  }
+
+.app-create-report-btn {
+  width: 100%;
+  margin: 5px auto;
+}
+
+.app-sidebar-content {
+  overflow-y: auto;
+  width: calc(var(--width-sidebar) - 1px);
+}
+
+  .app-sidebar-content::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .app-sidebar-content::-webkit-scrollbar-track {
+    background: var(--color-sidebar-scroll-bg);
+  }
+
+  .app-sidebar-content::-webkit-scrollbar-thumb {
+    border: var(--color-sidebar-scroll-bg);
+    background-color: var(--color-sidebar-btn);
+  }
+
+.report-viewer {
+  width: calc(100vw - var(--width-sidebar));
+  height: 100vh;
+}
+
+.report-designer {
+  width: calc(100vw - var(--width-sidebar));
+  height: 100vh;
+}
+
+.wyn-report-list {
+  overflow-y: auto;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wyn-report-list-item {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+  .wyn-report-list-item:hover {
+    background-color: var(--color-sidebar-item-bg-hover);
+  }
+
+  .wyn-report-list-item.active {
+    background-color: var(--color-sidebar-item-bg-active);
+  }
+
+  .wyn-report-list-item > span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+#wyn-report-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-sidebar-scroll-bg) var(--color-sidebar-btn);
+}
+
+  #wyn-report-list::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  #wyn-report-list::-webkit-scrollbar-track {
+    background: var(--color-sidebar-scroll-bg);
+  }
+
+  #wyn-report-list::-webkit-scrollbar-thumb {
+    border: var(--color-sidebar-scroll-bg);
+    background-color: var(--color-sidebar-btn);
+  }
+
+#app-org {
+  color: #a3a3a3;
+  font-style: italic;
+}

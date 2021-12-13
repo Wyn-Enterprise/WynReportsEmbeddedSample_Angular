@@ -1,0 +1,63 @@
+.reportsList {
+  overflow-y: visible;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+  .reportsList::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  .reportsList::-webkit-scrollbar-track {
+    background: var(--color-sidebar-scroll-bg);
+  }
+
+  .reportsList::-webkit-scrollbar-thumb {
+    border: var(--color-sidebar-scroll-bg);
+    background-color: var(--color-sidebar-btn);
+  }
+
+.listItem {
+  display: flex;
+  height: 35px;
+  padding-left: 15px;
+  cursor: auto;
+  align-items: center;
+}
+
+  .listItem > i {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  .listItem > img {
+    margin-right: 5px;
+    color: gray;
+  }
+
+  .listItem > h3 {
+    overflow: hidden;
+    margin: 0;
+    cursor: default;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .listItem.active {
+    background-color: var(--color-sidebar-item-bg-active);
+  }
+
+  .listItem > span {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .listItem:hover {
+    background-color: var(--color-sidebar-item-bg-hover);
+  }
