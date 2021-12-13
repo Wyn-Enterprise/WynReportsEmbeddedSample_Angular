@@ -33,7 +33,7 @@ or manually npm
 3. Set 'content-disposition' and 'location' in the "Exposed Headers" section. 
 
 After configuration, the System configuration page should look like the image below: 
-
+![](WynEnterprise-SystemConfigPage.png)
 
 ### About semantic versioning
 
