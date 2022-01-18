@@ -19,11 +19,14 @@ export class AppComponent implements OnInit {
   visible = false;
   newReport: boolean;
   reportsList: any;
+  param1: string;
+  param2: string;
 
   constructor(private cd: ChangeDetectorRef) { }
 
   async ngOnInit() {
-
+    this.param1 = 'Test1';
+    this.param2 = 'Test2';
   }
 
   handleSubmit = async (serverUrl: string, token: string, username: string) => {
@@ -52,12 +55,12 @@ export class AppComponent implements OnInit {
 
   createRDLReport = () => {
     this.reportType = "CPL";
-    this.newReport = true;    
+    this.newReport = true;
     this.isViewer = false;
     this.cd.detectChanges();
   }
 
-  createPageReport = () => {    
+  createPageReport = () => {
     this.reportType = "FPL";
     this.newReport = true;
     this.isViewer = false;

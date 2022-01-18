@@ -16,6 +16,8 @@ export class ReportViewerComponent implements OnInit, OnDestroy {
   @Input() logoutCallbackFn: (token: string) => void;
   @Input() docTitle: string;
   @Input() reportId: string;
+  @Input() param1: string;
+  @Input() param2: string;
 
   constructor() { }
 
@@ -72,7 +74,12 @@ export class ReportViewerComponent implements OnInit, OnDestroy {
         });
       }
       if (changes.reportId.currentValue != "")
-        await this.viewer.openReport(changes.reportId.currentValue);
+        if (this.docTitle == "Report1") {
+          const params = [{ name: 'Parameter1', values: [this.param1] }, { name: 'Parameter2', values: [this.param2] }];
+          await this.viewer.openReport(changes.reportId.currentValue, { parameters: params });
+        }
+        else
+          await this.viewer.openReport(changes.reportId.currentValue);
     }
   }
 }

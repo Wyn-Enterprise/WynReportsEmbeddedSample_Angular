@@ -25,7 +25,7 @@
       </div>
     </div>
     <div *ngIf="isViewer==true" class="report-viewer">
-      <report-viewer [reportId]="reportID" [token]="token"
+      <report-viewer [reportId]="reportID" [token]="token" [param1]="param1" [param2]="param2"
                      [docTitle]="docTitle" [serverUrl]="serverUrl" [logoutCallbackFn]="handleLogout"></report-viewer>
     </div>
     <div *ngIf="isViewer==false" class="report-designer">
