@@ -3,8 +3,6 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-import '@grapecity/wyn-report-viewer';
-import '@grapecity/wyn-report-designer';
 
 if (environment.production) {
   enableProdMode();

@@ -1,36 +1,27 @@
-<div>
-  <div *ngIf="token==''">
-    <sign-in [handleSubmitCallbackFunction]="handleSubmit"></sign-in>
-  </div>
-  <div id="app-root" class="app" *ngIf="token!=''">
-    <div class="app-sidebar">
-      <div class="app-sidebar-header">
-        <div class="app-sidebar-header-group">
-          <div id="app-portal-url">{{serverUrl}}</div>
-        </div>
-        <div class="app-sidebar-header-group app-user-info">
-          <div>
-            <div id="app-username">{{username}}</div>
-          </div>
-          <button id="app-logout-button" class="app-sidebar-btn app-logout-button" (click)="handleLogout()">Log Out</button>
-        </div>
-        <div class="app-sidebar-header-group">
-          <button id="app-create-rdl-report" class="app-sidebar-btn app-create-report-btn" type="button" (click)="createRDLReport()">Create Blank RDL Report</button>
-          <button id="app-create-page-report" class="app-sidebar-btn app-create-report-btn" type="button" (click)="createPageReport()">Create Blank Page Report</button>
-          <button id="app-open-report-designer" class="app-sidebar-btn app-create-report-btn" type="button" (click)="openReportInDesigner()">Open selected report in Designer</button>
-        </div>
+<div *ngIf="token==''">
+  <sign-in [handleSubmitCallbackFunction]="handleSubmit"></sign-in>
+</div>
+<div id="app-root" class="app" *ngIf="token!=''">
+  <div class="app-sidebar">
+    <div class="app-sidebar-header">
+      <div class="app-sidebar-header-group">
+        <div id="app-portal-url">{{serverUrl}}</div>
       </div>
-      <div class="app-sidebar-content">
-        <reports-list [reportSelectedCallbackFn]="reportSelected" [token]="token" [serverUrl]="serverUrl" [reportsList]="reportsList"></reports-list>
+      <div class="app-sidebar-header-group app-user-info">
+        <div>
+          <div id="app-username">{{username}}</div>
+        </div>
+        <button id="app-logout-button" class="app-sidebar-btn app-logout-button" (click)="handleLogout()">Log Out</button>
+      </div>
+      <div class="app-sidebar-header-group">
+        <button id="app-create-rdl-report" class="app-sidebar-btn app-create-report-btn" type="button" (click)="createRDLReport()">Create Blank RDL Report</button>
+        <button id="app-create-page-report" class="app-sidebar-btn app-create-report-btn" type="button" (click)="createPageReport()">Create Blank Page Report</button>
+        <button id="app-open-report-designer" class="app-sidebar-btn app-create-report-btn" type="button" (click)="openReportInDesigner()">Open selected report in Designer</button>
       </div>
     </div>
-    <div *ngIf="isViewer==true" class="report-viewer">
-      <report-viewer [reportId]="reportID" [token]="token" [param1]="param1" [param2]="param2"
-                     [docTitle]="docTitle" [serverUrl]="serverUrl" [logoutCallbackFn]="handleLogout"></report-viewer>
-    </div>
-    <div *ngIf="isViewer==false" class="report-designer">
-      <report-designer [token]="token" [serverUrl]="serverUrl" [isViewer]="isViewer"
-                     [docTitle]="docTitle" [reportId]="reportID" [reportType]="reportType" [newReport]="newReport" [reportsList]="reportsList"></report-designer>
+    <div class="app-sidebar-content">
+      <reports-list [reportSelectedCallbackFn]="reportSelected" [token]="token" [serverUrl]="serverUrl" [reportsList]="reportsList"></reports-list>
     </div>
   </div>
+  <div style="flex: 1;" id='wyn-root'></div>
 </div>

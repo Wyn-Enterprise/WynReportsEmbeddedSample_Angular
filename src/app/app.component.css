@@ -71,16 +71,6 @@
     background-color: var(--color-sidebar-btn);
   }
 
-.report-viewer {
-  width: calc(100vw - var(--width-sidebar));
-  height: 100vh;
-}
-
-.report-designer {
-  width: calc(100vw - var(--width-sidebar));
-  height: 100vh;
-}
-
 .wyn-report-list {
   overflow-y: auto;
   width: 100%;
