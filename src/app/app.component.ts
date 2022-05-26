@@ -50,7 +50,13 @@ export class AppComponent implements OnInit {
     this.createViewer();
   }
 
+  clearContainer = () => {
+    const container = document.querySelector('#wyn-root');
+    if (container) container.innerHTML = '';
+  }
+
   createViewer = () => {
+    this.clearContainer();
     WynIntegration.createReportViewer({
       baseUrl: this.serverUrl,
       reportId: this.reportID,
@@ -66,18 +72,23 @@ export class AppComponent implements OnInit {
 
   createRDLReport = () => {
     this.ins?.destroy?.();
+    this.clearContainer();
     this.reportType = "CPL";
     this.reportID = '';
+    this.createDesigner();
   }
 
   createPageReport = () => {
     this.ins?.destroy?.();
+    this.clearContainer();
     this.reportType = "FPL";
     this.reportID = '';
+    this.createDesigner();
   }
 
   openReportInDesigner = () => {
     this.ins?.destroy?.();
+    this.clearContainer();
     this.createDesigner();
   }
 
@@ -115,7 +126,6 @@ export class AppComponent implements OnInit {
       reportId: this.reportID,
       token: this.token,
       onSaved: this.onSavedReport,
-      reportViewer: { disabled: false },
       makeTitle: (reportName, options) => {
         const title = `${reportName}${options.dirty ? ' *' : ''}`;
         return title;
@@ -124,15 +134,9 @@ export class AppComponent implements OnInit {
       //version: '5.0.21782.0',
     }, '#wyn-root').then(ins => {
       this.ins = ins;
-      console.log(this.ins);
       this.ins.closeViewer();
-      const reportInfo = {
-        id: this.reportID,
-        name: this.docTitle,
-        permissions: ['all'],
-      };
-      this.ins.api.openReport({ reportInfo });
-
+      const reportType = this.reportType
+      this.ins.api.createReport({ reportType });
       this.loading = false;
     });
   }
