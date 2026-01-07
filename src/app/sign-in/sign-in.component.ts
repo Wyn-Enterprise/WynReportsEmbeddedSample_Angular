@@ -3,9 +3,10 @@ import Config from '../../assets/config.json';
 
 
 @Component({
-  selector: 'sign-in',
-  templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+    selector: 'sign-in',
+    templateUrl: './sign-in.component.html',
+    styleUrls: ['./sign-in.component.css'],
+    standalone: false
 })
 export class SignInComponent implements OnInit {
 
@@ -25,11 +26,11 @@ export class SignInComponent implements OnInit {
 
   async onSubmit() {
 
-    var token = '';
-    var re = /\/$/;
-    var baseUrl = this.serverUrl.replace(re, "");
+    let token = '';
+    const re = /\/$/;
+    const baseUrl = this.serverUrl.replace(re, "");
 
-    var urlencoded = new URLSearchParams();
+    const urlencoded = new URLSearchParams();
     urlencoded.append("grant_type", "password");
     urlencoded.append("username", this.username);
     urlencoded.append("password", this.password);

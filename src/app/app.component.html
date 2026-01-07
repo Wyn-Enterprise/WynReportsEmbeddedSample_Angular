@@ -1,7 +1,7 @@
-<div *ngIf="token==''">
+<div *ngIf="token===''">
   <sign-in [handleSubmitCallbackFunction]="handleSubmit"></sign-in>
 </div>
-<div id="app-root" class="app" *ngIf="token!=''">
+<div id="app-root" class="app" *ngIf="token!==''">
   <div class="app-sidebar">
     <div class="app-sidebar-header">
       <div class="app-sidebar-header-group">

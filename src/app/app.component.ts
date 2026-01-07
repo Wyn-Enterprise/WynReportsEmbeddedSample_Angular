@@ -1,11 +1,12 @@
 import { Component, ChangeDetectorRef, OnInit } from '@angular/core';
 import { getReportList } from './library';
-import { WynIntegration } from '@grapecity/wyn-integration';
+import { WynIntegration } from '@wynenterprise/wyn-integration';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  standalone: false
 })
 export class AppComponent implements OnInit {
   loading = false;
@@ -93,7 +94,7 @@ export class AppComponent implements OnInit {
   }
 
   onSavedReport = (report) => {
-    let index = this.reportsList.findIndex(x => report.id === x.id || report.name === x.name);
+    const index = this.reportsList.findIndex(x => report.id === x.id || report.name === x.name);
     if (index === -1) {
       this.reportsList.push(report);
       this.sortReports();
