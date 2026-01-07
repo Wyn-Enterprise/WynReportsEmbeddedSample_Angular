@@ -14,23 +14,24 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "declaration": false,
-    "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
-    "target": "es2017",
+    "target": "ES2022",
     "module": "es2020",
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": [
       "es2020",
       "dom"
-    ]
+    ],
+    "useDefineForClassFields": false,
+    "skipLibCheck": true
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": false,
-    "strictInputAccessModifiers": false,    
+    "strictInputAccessModifiers": false,
     "strictTemplates": false
   }
 }

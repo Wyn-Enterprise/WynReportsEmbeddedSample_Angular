@@ -4,87 +4,77 @@
   height: 100vh;
   align-items: center;
   justify-content: center;
+  background-color: var(--color-blank-area-bg);
 }
 
 .sign-in-form {
-  width: 340px;
+  width: 380px;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px var(--color-shadow);
 }
 
-  .sign-in-form > *, #org-root > div, #org-root > label {
-    box-sizing: border-box;
-    width: 100%;
-    margin-bottom: 25px;
-  }
-
-  .sign-in-form .sign-in-control {
-    height: 50px;
-  }
-
-.sign-in-control > * {
-  width: 100%;
-  height: 100%;
+.sign-in-form>form>div {
+  margin-bottom: 20px;
 }
 
 .sign-in-error {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   color: var(--color-text-error);
   font-size: var(--fs-controls);
+  text-align: center;
 }
-
-  .sign-in-error > * {
-    margin-bottom: 5px;
-  }
 
 .sign-in-button {
-  height: 40px;
+  height: 44px;
   width: 100%;
   cursor: pointer;
-  transition: all .3s;
-  color: var(--color-text-main);
+  transition: all .2s ease;
+  color: #fff;
   border: none;
-  border-radius: 2px;
+  border-radius: 8px;
   background-color: var(--color-accent);
   font-size: var(--fs-controls);
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-  .sign-in-button:hover {
-    background-color: var(--color-accent-hover);
-  }
+.sign-in-button:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(98, 0, 234, 0.2);
+}
 
-  .sign-in-button:focus, .sign-in-button:disabled {
-    outline: 0;
-  }
+.sign-in-button:focus,
+.sign-in-button:disabled {
+  outline: 0;
+}
 
-  .sign-in-button:disabled, .sign-in-button:active {
-    background-color: var(--color-accent-focus);
-  }
+.sign-in-button:disabled,
+.sign-in-button:active {
+  background-color: var(--color-accent-focus);
+  transform: translateY(0);
+}
 
 .sign-in-input {
-  padding: 5px;
-  transition: all .3s;
+  width: 100%;
+  padding: 12px 16px;
+  transition: all .2s;
   color: var(--color-text-input);
-  border: none;
-  border-bottom: 1px solid var(--color-accent);
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
   font-size: var(--fs-controls);
+  background-color: #f9f9f9;
 }
 
-  .sign-in-input:focus {
-    border-bottom: 1px solid var(--color-accent-focus);
-    outline: none;
-    background-color: #fff;
-  }
+.sign-in-input:focus {
+  border-color: var(--color-accent);
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
 
-  .sign-in-input::placeholder {
-    color: var(--color-text-placeholder);
-  }
-
-.org-form-label {
-  display: block;
-  width: 100%;
-  height: 40px;
-  padding: 5px;
-  transition: all .3s;
-  color: var(--color-text-input);
-  border: none;
-  font-size: var(--fs-controls);
+.sign-in-input::placeholder {
+  color: var(--color-text-placeholder);
 }

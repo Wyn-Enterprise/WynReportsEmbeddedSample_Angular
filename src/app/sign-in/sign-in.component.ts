@@ -1,11 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import Config from '../../assets/config.json';
+import { FormsModule } from '@angular/forms';
 
 
 @Component({
   selector: 'sign-in',
   templateUrl: './sign-in.component.html',
-  styleUrls: ['./sign-in.component.css']
+  styleUrls: ['./sign-in.component.css'],
+  imports: [FormsModule]
 })
 export class SignInComponent implements OnInit {
 
@@ -14,7 +16,7 @@ export class SignInComponent implements OnInit {
   password: string;
   error: string;
 
-  @Input() handleSubmitCallbackFunction: (url: string, token: string, username: string) => void;
+  handleSubmitCallbackFunction = input<(url: string, token: string, username: string) => void>();
 
   constructor() { }
 
@@ -25,11 +27,11 @@ export class SignInComponent implements OnInit {
 
   async onSubmit() {
 
-    var token = '';
-    var re = /\/$/;
-    var baseUrl = this.serverUrl.replace(re, "");
+    let token = '';
+    const re = /\/$/;
+    const baseUrl = this.serverUrl.replace(re, "");
 
-    var urlencoded = new URLSearchParams();
+    const urlencoded = new URLSearchParams();
     urlencoded.append("grant_type", "password");
     urlencoded.append("username", this.username);
     urlencoded.append("password", this.password);
@@ -50,7 +52,8 @@ export class SignInComponent implements OnInit {
     await response.json().then(res => {
       token = res.access_token;
       if (token) {
-        this.handleSubmitCallbackFunction(this.serverUrl, token, this.username);
+        // @ts-ignore
+        this.handleSubmitCallbackFunction()(this.serverUrl, token, this.username);
       } else {
         this.error = "Authorization error";
       }
