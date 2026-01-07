@@ -1,6 +1,8 @@
-<div class="reportsList">  
-  <div *ngFor="let rpt of reportsList" class="listItem" (click)="onClick(rpt)">
-    <img [src]="getIconSrc(rpt)" alt="rpt.name" />
-    <h3 title="rpt.title">{{rpt.name}}</h3>
-  </div>
+<div class="reportsList">
+  @for (rpt of reportsList(); track rpt) {
+    <div class="listItem" (click)="onClick(rpt)">
+      <img [src]="getIconSrc(rpt)" alt="rpt.name" />
+      <h3 title="rpt.title">{{rpt.name}}</h3>
+    </div>
+  }
 </div>
