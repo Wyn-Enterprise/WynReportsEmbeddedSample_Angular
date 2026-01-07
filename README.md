@@ -19,10 +19,10 @@ After configuration, the System configuration page should look like the image be
 
 ## Build and run the sample
 
-2. Enter `npm install`
+1. Enter `npm install`
 2. Enter `npm run build`
-5. Enter `ng run start`
-6. Open http://localhost:3000 in browser
+3. Enter `npm start`
+4. Open http://localhost:3000 in browser
 
 ### Documentation
 
